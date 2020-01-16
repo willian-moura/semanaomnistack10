@@ -1,0 +1,106 @@
+Dependencias
+express <-- gerencia rotas e coloca a aplicação pra rodar
+nodemon <-- monitora alterações no código e atualiza-o automaticamente com o servidor online
+mongoose <-- gerenciamento do MongoDB
+axios <-- faz chamadas para outras APIs
+___________________________________________________________
+Obsevações/Dicas
+semantic version
+express nao entende JSON por padrão {
+	app.use(express.json()) <-- vale para todas as rotas da aplicacao
+	app.get() <-- valido apenas para rotas comecando com "get"
+}
+
+MongoDB (Não-relacional) - não indicado para muitos relacionamentos
+
+Schema <-- estruturacao de uma entidade no BD
+
+split(pattern) <-- separa uma string pelos seus patterns
+
+trim() <-- remove espaçamentos antes e depois de uma string
+
+Controllers: responssavel por receber a requisição, processar e devolver uma resposta
+
+	geralmente têm 5 metodos:
+	index:
+		mostrar uma lista do recurso
+	show:
+		mostrar um único recurso
+	store:
+		criar um novo recurso
+	update:
+		atualizar um recurso existente
+	destroy:
+		excluir um recurso existente
+
+$in <-- operador logico do mongoDB
+	https://docs.mongodb.com/manual/reference/operator/
+___________________________________________________________
+Comandos
+yarn init -y <-- iniciar um projeto
+
+yarn add express <-- instalar dep express
+
+yarn add nodemon -D <-- -D informar ser uma dependência de desenvolvimento
+
+yarn add mongoose
+
+yarn add axios
+___________________________________________________________
+Teoria
+
+www.omnistack.com       /users
+|_______________|       |_____|
+        |                  |
+    aplicação (consome) recurso
+
+
+request: informações enviadas pelo cliente em sua "requisição"
+response: resposta do servidor para o cliente
+ 
+
+
+métodos HTTP
+
+.get() <-- facilmente acessado pelo navegador
+    receber/buscar infomação
+    listar usuarios
+.post()
+    criar informação    
+    cadastrar usuarios
+.put()
+    editar informação
+    editar usuarios
+.delete()
+    remover informação
+    remover usuarios
+
+
+Tipos de parametros:
+Query Params:	request.query 
+	incorporados na URL
+	utilizados geralmente no metodo GET
+	Filtros, ordenacao, paginacao, etc...
+
+	listar usuários com nome Diego
+	/users/?search=Diego
+
+Route Params: request.params
+	utilizados geralmente nos metods PUT e DELETE
+	incorporados na rota
+	identificar um recurso na alteração ou remoção
+
+	/users/:id
+
+Body: request.body 
+	utilizados geralmente nos metodos PUT e POST
+	enviar formularios
+	criar recursos etc
+	Dados para criacao ou alteracao de um registro
+
+_____
+
+module.exports = mongoose.model('Dev', DevSchema);
+
+const techsArray = techs.split(',').map(tech => tech.trim())
+
