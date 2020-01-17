@@ -104,3 +104,42 @@ module.exports = mongoose.model('Dev', DevSchema);
 
 const techsArray = techs.split(',').map(tech => tech.trim())
 
+_________________________________________________________
+
+Aplicacao WEB
+
+Dependencias
+
+_________________________________________________________
+Anotacoes/Dicas
+
+Todo arquivo com JSX deve importar o React
+
+<> </> fragment
+
+toda função própria de um componente deve ser criada dentro dele mesmo
+
+Imutabilidade: conceito abordado pelo React onde algo nunca é "mudado" e sim criado algo novo a partir de seu valor antigo
+
+3 CONCEITOS PRINCIPAIS DO REACT
+
+COMPONENTE
+	Bloco isolado de HTML, CSS e JS, o qual nao interfere no restante da aplicação
+ESTADO
+	Estado é uma informação mantida pelo componente	(imutabilidade)
+PROPRIEDADE
+	informacoes que o componente pai passa para o componente filho
+
+useEffect: dispara uma função toda vez que uma informacao alterar
+    se passar com um array vazio ele dispara apenas uma vez
+_________________________________________________________
+Comandos
+
+_________________________________________________________
+Teoria
+
+const [counter, setCounter] = useState(0);
+
+
+
+_________________________________________________________
